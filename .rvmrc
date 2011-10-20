@@ -1,0 +1,6 @@
+rvm_trust_rvmrcs_flag=1
+rvm_install_on_use_flag=1
+rvm_project_rvmrc=1
+rvm_gem_options="--no-rdoc --no-ri"
+rvm_gemset_create_on_use_flag=1
+rvm 1.9.2@ismyhouseflooded
