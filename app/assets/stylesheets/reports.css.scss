@@ -13,9 +13,5 @@ section#landing {
     input {
         font-size: 16px;
         &[type="text"] { outline: none; }
-        &[type="submit"] {
-            cursor: pointer;
-            &:hover { border-color: #777; }
-        }
     }
 }

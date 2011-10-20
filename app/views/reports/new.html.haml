@@ -1,33 +1,34 @@
-%header
-  %h1 บ้านฉันจมหรือยัง
-  = link_to "กลับไปดูบ้านคนอื่น", new_report_path
+%div#main
 
-%article
-  %h2 แจ้งสถานการณ์
-  = form_for @report do |f|
-    %dl
-      %dt
-        = f.label :zone_id, "รหัสไปรษณีย์"
-      %dd
-        = f.text_field :zone_id
+  %header
+    %h1= link_to "บ้านฉันจมหรือยัง", "/"
 
-      %dt
-        = f.label :flooded, "สภาพ"
-      %dd
-        = f.radio_button :flooded, true
-        = f.label :flooded_true, "จมแล้ว"
-        = f.radio_button :flooded, false
-        = f.label :flooded_false, "ยังไม่จม"
+  %article
+    %h2 แจ้งสถานการณ์
+    = form_for @report do |f|
+      %dl
+        %dt
+          = f.label :zone_id, "รหัสไปรษณีย์"
+        %dd
+          = f.text_field :zone_id
 
-      %dt
-        = f.label :comment, "หมายเหตุ (เว้นว่างได้)"
-      %dd
-        = f.text_field :comment
+        %dt
+          = f.label :flooded, "สภาพ"
+        %dd
+          = f.radio_button :flooded, true
+          = f.label :flooded_true, "จมแล้ว"
+          = f.radio_button :flooded, false
+          = f.label :flooded_false, "ยังไม่จม"
 
-      %dt
-        = f.label :author, "ผู้รายงาน (เว้นว่างได้)"
-      %dd
-        = f.text_field :author
+        %dt
+          = f.label :comment, "หมายเหตุ (เว้นว่างได้)"
+        %dd
+          = f.text_field :comment
 
-      %dd
-        = f.submit "บันทึก"
+        %dt
+          = f.label :author, "ผู้รายงาน (เว้นว่างได้)"
+        %dd
+          = f.text_field :author
+
+        %dd
+          = f.submit "บันทึก"
