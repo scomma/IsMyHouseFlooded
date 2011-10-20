@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020145910) do
+ActiveRecord::Schema.define(:version => 20111020151922) do
 
   create_table "reports", :force => true do |t|
     t.integer  "zone_id",    :null => false
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20111020145910) do
     t.integer  "reports_count",  :default => 0, :null => false
     t.integer  "positive_count", :default => 0, :null => false
     t.integer  "negative_count", :default => 0, :null => false
-    t.integer  "total_count",    :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

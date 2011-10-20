@@ -1,0 +1,19 @@
+= content_tag_for :article, zone
+  %h2= zone.id
+  %p
+    %strong จมแล้ว:
+    = "%d (%.0f%%)" % [zone.positive_count. zone.positive_percent]
+  %p
+    %strong ยังไม่จม:
+    = "%d (%.0f%%)" % [zone.negative_count. zone.negative_percent]
+  %ul
+    - zone.reports.each do |report|
+      = content_tag_for :li, report
+        - if report.flooded == true
+          %strong จมแล้ว
+        - elsif report.flooded == false
+          %strong ยังไม่จม
+        = report.comment
+        - if report.author.present?
+          %em
+            &mdash;#{report.author}

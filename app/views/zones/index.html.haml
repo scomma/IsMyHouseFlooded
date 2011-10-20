@@ -1,2 +1,5 @@
-%h1 Zones#index
-%p Find me in app/views/zones/index.html.haml
+%header
+  %h1 บ้านฉันจมหรือยัง
+  = link_to "รายงานสถานการณ์", new_report_path
+
+= render @zones
