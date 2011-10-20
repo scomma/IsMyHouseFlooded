@@ -12,7 +12,7 @@ class Report < ActiveRecord::Base
     Zone.transaction do
       zone.positive_count += 1 if flooded == true
       zone.negative_count += 1 if flooded == false
-      zone.reports_count  += 1
+      zone.reports_count  += 1 if flooded.in? [true, false]
       zone.save
     end
   end
