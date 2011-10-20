@@ -1,6 +1,5 @@
 Ismyhouseflooded::Application.routes.draw do
-  resources :zones
+  root to: 'zones#index', as: 'zones'
+  resources :zones, except: :index
   resources :reports
-
-  root to: 'zones#index'
 end
