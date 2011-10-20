@@ -4,7 +4,8 @@
 %section#landing
   = form_for @report, url: new_report_path, method: :get do |f|
     %p.description กรอกรหัสไปรษณีย์ของคุณเพื่อรายงานสถานการณ์
-    %p.field= f.text_field :zone_id, placeholder: "รหัสไปรษณีย์"
-    %p.submit= f.submit "แจ้งสถานการณ์"
+    %p.field<
+      = f.text_field :zone_id, placeholder: "รหัสไปรษณีย์"
+      = f.submit "แจ้งสถานการณ์"
 
 = render @zones

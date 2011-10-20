@@ -1,4 +1,21 @@
 section#landing {
     text-align: center;
-    margin: 2em;
+    margin: 3em;
+    p {
+        margin: 0;
+        &.description {
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-shadow: 0 1px 0 #fff;
+            color: #333;
+        }
+    }
+    input {
+        font-size: 16px;
+        &[type="text"] { outline: none; }
+        &[type="submit"] {
+            cursor: pointer;
+            &:hover { border-color: #777; }
+        }
+    }
 }
