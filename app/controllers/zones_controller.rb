@@ -1,6 +1,6 @@
 class ZonesController < ApplicationController
   def index
-    @zones = Zone.order{reports_count.desc}.all
+    @zones = Zone.order{updated_at.desc}.all
     @report = Report.new
   end
 

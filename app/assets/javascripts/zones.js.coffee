@@ -12,3 +12,7 @@ $ ->
       $('#initiate_report').slideUp()
       $('#new_report').slideDown()
     false
+
+  $('#zones').isotope
+    itemSelector: '.zone'
+    layoutMode: 'masonry'
