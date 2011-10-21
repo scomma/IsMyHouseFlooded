@@ -1,5 +1,9 @@
 = content_tag_for :article, zone, data:{ symbol: zone.id } do
   %h3= zone.id
+  %p
+    %strong
+      จม
+      = "%.0f%%" % zone.positive_percent
   /
     %p
       %strong จมแล้ว:

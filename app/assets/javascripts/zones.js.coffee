@@ -13,6 +13,10 @@ $ ->
       $('#new_report').slideDown()
     false
 
+  $('#zone_id').keyup ->
+    $('#zones').isotope
+      filter: ":contains(#{@value})"
+
   $('#zones').isotope
     itemSelector: '.zone'
     layoutMode: 'masonry'
