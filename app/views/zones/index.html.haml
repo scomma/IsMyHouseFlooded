@@ -4,17 +4,34 @@
     %h1= link_to "บ้านฉันจมหรือยัง", "/"
 
   %section#landing
-    = form_for @report, url: new_report_path, method: :get do |f|
-      %p.description กรอกรหัสไปรษณีย์ของคุณเพื่อรายงานสถานการณ์
+    = form_tag new_report_path, method: :post, id: 'initiate_report' do
+      %h2.description กรอกรหัสไปรษณีย์ของพื้นที่ที่ท่านพักอาศัยอยู่
       %p.field<
-        = f.text_field :zone_id, placeholder: "รหัสไปรษณีย์"
-        = f.submit "แจ้งสถานการณ์"
+        = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
+        = submit_tag "แจ้งสถานการณ์"
+
+    = form_for @report, method: :post do |f|
+      %h2
+        แจ้งสถานการณ์ในพื้นที่
+        %span#zone_id_label
+        = f.hidden_field :zone_id
+
+      %p.buttonset
+        = f.radio_button :flooded, true
+        = f.label :flooded_true, "จมแล้ว"
+        = f.radio_button :flooded, false
+        = f.label :flooded_false, "ยังไม่จม"
+
+      %p
+        = f.text_field :comment
+        = f.text_field :author
+
+      %p
+        = f.submit "บันทึก"
 
 %div#sub
 
   %header
-    %h2 รายงานสถานการณ์ล่าสุด
-
-  %p PUT SOMETHING HERE
+    %h2 สถานการณ์ล่าสุด
 
 = render @zones

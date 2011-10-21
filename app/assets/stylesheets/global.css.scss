@@ -1,10 +1,26 @@
+@font-face {
+    font-family: "palgo";
+    src: url(palgo.otf);
+}
+
 body {
     margin: 0;
+    h1, h2 {
+        font-family: "palgo", "Lucida Grande", "Leelawadee", sans-serif;
+        font-weight: normal;
+    }
+    h1 {
+        font-size: 220%;
+    }
+    h2 {
+        font-size: 180%;
+    }
 }
 
 div#main {
     background-image: url(background.png);
     padding: 4em 2em;
+    text-align: center;
     header {
         background-image: url(separator.png);
         background-repeat: no-repeat;
@@ -61,6 +77,10 @@ form {
         font-size: 14px;
         padding: 0.5em;
     }
+    input.postcode {
+        letter-spacing: 0.2em;
+        text-align: center;
+    }
     input[type="submit"] {
         text-shadow: 0 1px 0 #fff;
         color: #666;
@@ -84,5 +104,9 @@ form {
         box-shadow: inset 0 0 0 1px #f3f3f3;
         cursor: pointer;
         &:hover { border-color: #777; }
+        &.clicked {
+            background: #e0e0e0;
+            color: #333;
+        }
     }
 }

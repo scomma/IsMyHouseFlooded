@@ -1,3 +1,16 @@
 // Place all the styles related to the zones controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_report {
+  border: 1px solid #ccc;
+  border-top-color: #888;
+  box-shadow: white 0 1px 1px;
+  border-radius: 5px;
+  background: white;
+
+  p {
+    margin: auto;
+    clear: both;
+  }
+}

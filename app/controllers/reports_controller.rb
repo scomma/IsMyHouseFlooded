@@ -12,7 +12,8 @@ class ReportsController < ApplicationController
   end
 
   def show
-    redirect_to zones_path(anchor: "zone_%d" % params[:id])
+    @report = Report.find params[:id]
+    redirect_to zones_path anchor: "zone_%d" % @report.zone_id
   end
 
   private
