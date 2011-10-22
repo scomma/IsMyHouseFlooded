@@ -10,11 +10,11 @@
 #= require_tree .
 
 $ ->
-  $('input:text, input[type=number]').uniform()
-  $('input:submit').live 'mousedown', ->
+  $('input:text, input[type=number], textarea').uniform()
+  $('input:submit, button').live 'mousedown', ->
     $(this).addClass 'clicked'
-  $('input:submit').live 'mouseup', ->
+  $('input:submit, button').live 'mouseup', ->
     $(this).removeClass 'clicked'
-  $('input:submit').live 'mouseout', ->
+  $('input:submit, button').live 'mouseout', ->
     $(this).removeClass 'clicked'
   $('.buttonset').buttonset()

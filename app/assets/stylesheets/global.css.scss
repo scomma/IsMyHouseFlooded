@@ -19,7 +19,7 @@ body {
 
 div#main {
     background-image: url(background.png);
-    padding: 4em 2em;
+    padding: 3em 2em 1em;
     text-align: center;
     header {
         background-image: url(separator.png);
@@ -81,7 +81,7 @@ form {
         letter-spacing: 0.2em;
         text-align: center;
     }
-    input[type="submit"] {
+    input[type="submit"], button {
         text-shadow: 0 1px 0 #fff;
         color: #666;
         padding: 0.5em 0.8em;

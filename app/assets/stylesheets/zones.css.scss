@@ -2,25 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+section#landing {
+    text-align: center;
+    margin: 2em auto;
+    width: 500px;
+    p {
+        &.description {
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-shadow: 0 1px 0 #fff;
+            color: #333;
+        }
+    }
+    input, textarea, button {
+        font-size: 14px;
+        &[type="text"] { outline: none; }
+    }
+}
+
 .description {
   text-shadow: white 0 1px 1px;
 }
 
 #new_report {
-  border: 1px solid #ccc;
-  border-top-color: #888;
-  box-shadow: inset 0 1px 1px white;
-  border-radius: 5px;
-  background: white;
+  dl {
+    width: 400px;
+    text-align: left;
 
-  p {
-    margin: auto;
-    clear: both;
+    dt {
+      clear: left;
+      width: 150px;
+      text-align: right;
+      height: 30px;
+
+      &.for_buttonset { padding-top: 2px; height: 24px; }
+      &.for_text      { padding-top: 8px; height: 18px; }
+    }
+
+    dd {
+      margin: -26px 0 0 160px;
+
+      &.buttonset {
+        padding-left: 2px;
+        height: 36px;
+      }
+    }
   }
 }
 
 #sub {
   text-align: center;
+
   #zones {
     margin: auto;
     max-width: 800px;

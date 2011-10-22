@@ -9,9 +9,13 @@ $ ->
     if 10000 < zone_id < 100000
       $('#zone_id_label').text zone_id
       $('#report_zone_id').val zone_id
-      $('#initiate_report').slideUp()
-      $('#new_report').slideDown()
+      $('#initiate_report').hide()
+      $('#new_report').show()
     false
+
+  $('#cancel_report').click ->
+    $('#new_report').hide().get(0).reset()
+    $('#initiate_report').show()
 
   $('#zone_id').keyup ->
     $('#zones').isotope

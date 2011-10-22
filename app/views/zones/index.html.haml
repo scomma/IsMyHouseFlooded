@@ -16,18 +16,21 @@
         %span#zone_id_label
         = f.hidden_field :zone_id
 
-      %p.buttonset
-        = f.radio_button :flooded, true
-        = f.label :flooded_true, "จมแล้ว"
-        = f.radio_button :flooded, false
-        = f.label :flooded_false, "ยังไม่จม"
+      %dl
+        %dt.for_buttonset ขณะนี้
+        %dd.buttonset
+          = f.radio_button :flooded, true
+          = f.label :flooded_true, "ท่วมแล้ว"
+          = f.radio_button :flooded, false
+          = f.label :flooded_false, "ยังไม่ท่วม"
 
-      %p
-        = f.text_field :comment
-        = f.text_field :author
+        %dt.for_text  หมายเหตุ
+        %dd= f.text_area :comment, placeholder: "(ถ้ามี)", rows: 2
 
-      %p
-        = f.submit "บันทึก"
+        %dt
+        %dd
+          = f.submit "บันทึก"
+          = button_tag "ยกเลิก", id: 'cancel_report', type: 'button'
 
 %div#sub
 
