@@ -13,6 +13,8 @@ $ ->
   $('input:text, input[type=number]').uniform()
   $('input:submit').live 'mousedown', ->
     $(this).addClass 'clicked'
-  $('input:submit').live 'mouseup, mouseout', ->
+  $('input:submit').live 'mouseup', ->
+    $(this).removeClass 'clicked'
+  $('input:submit').live 'mouseout', ->
     $(this).removeClass 'clicked'
   $('.buttonset').buttonset()

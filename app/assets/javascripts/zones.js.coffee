@@ -15,7 +15,7 @@ $ ->
 
   $('#zone_id').keyup ->
     $('#zones').isotope
-      filter: ":contains(#{@value})"
+      filter: if @value.length then ":contains(#{@value})" else ""
 
   $('#zones').isotope
     itemSelector: '.zone'

@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.description {
+  text-shadow: white 0 1px 1px;
+}
+
 #new_report {
   border: 1px solid #ccc;
   border-top-color: #888;
-  box-shadow: white 0 1px 1px;
+  box-shadow: inset 0 1px 1px white;
   border-radius: 5px;
   background: white;
 
@@ -19,7 +23,7 @@
   text-align: center;
   #zones {
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     text-align: left
   }
 }
