@@ -1,26 +1,7 @@
 = content_tag_for :article, zone, data:{ symbol: zone.id } do
   %h3= zone.id
-  %p
-    %strong
+  .status
+    - unless zone.positive_percent.nan?
       ท่วม
       = "%.0f%%" % zone.positive_percent
-  /
-    %p
-      %strong จมแล้ว:
-      = "%d (%.0f%%)" % [zone.positive_count, zone.positive_percent]
-    %p
-      %strong ยังไม่จม:
-      = "%d (%.0f%%)" % [zone.negative_count, zone.negative_percent]
-    %ul
-      - zone.reports.each do |report|
-        = content_tag_for :li, report do
-          - if report.flooded == true
-            %strong จมแล้ว
-          - elsif report.flooded == false
-            %strong ยังไม่จม
-          = report.comment
-          %em
-            &mdash;
-            = report.author if report.author.present?
-            = time_ago_in_words report.created_at
-            ago
+  .count ผู้รายงาน #{zone.reports_count} คน

@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: url(dark_brick_wall.png);
+}
+
 section#landing {
     text-align: center;
     margin: 2em auto;
-    width: 500px;
+    width: 400px;
     p {
         &.description {
             margin-bottom: 20px;
@@ -31,7 +35,7 @@ section#landing {
 
     dt {
       clear: left;
-      width: 150px;
+      width: 80px;
       text-align: right;
       height: 30px;
 
@@ -40,7 +44,7 @@ section#landing {
     }
 
     dd {
-      margin: -26px 0 0 160px;
+      margin: -26px 0 0 90px;
 
       &.buttonset {
         padding-left: 2px;
@@ -52,10 +56,41 @@ section#landing {
 
 #sub {
   text-align: center;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 8px 5px;
 
   #zones {
     margin: auto;
     max-width: 800px;
-    text-align: left
+    padding: 35px 0;
+    text-align: left;
+
+    .zone {
+      background: #333;
+      box-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px, rgba(255, 255, 255, 0.2) 0 -1px 0;
+      color: white;
+      text-shadow: #111 0 -1px 1px;
+
+      & > * {
+      }
+
+      h3 {
+        bottom: 55px;
+        width: 100%;
+        text-align: center;
+        font-size: 150%;
+      }
+
+      .status {
+        right: 10px;
+        bottom: 25px;
+        font-size: 10pt;
+      }
+
+      .count {
+        right: 10px;
+        bottom: 10px;
+        font-size: 8pt;
+      }
+    }
   }
 }
