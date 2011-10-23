@@ -21,6 +21,15 @@ $ ->
     $('#zones').isotope
       filter: if @value.length then ":contains(#{@value})" else ""
 
+  $('#sorter a').click ->
+    $('#zones').isotope
+      sortBy: $(this).attr('href').slice(1)
+      sortAscending: false
+
   $('#zones').isotope
     itemSelector: '.zone'
     layoutMode: 'masonry'
+    getSortData:
+      time:  ($zone) -> $zone.data('time')
+      count: ($zone) -> parseInt $zone.data('count')
+      flood: ($zone) -> parseFloat $zone.data('flood')

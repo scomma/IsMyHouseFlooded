@@ -1,4 +1,5 @@
-= content_tag_for :article, zone, { class: zone.positive_percent >= 20 ? "flooded" : "dry" }, data: { symbol: zone.id } do
+= content_tag_for :article, zone, class: zone.positive_percent >= 20 ? "flooded" : "dry",                              |
+  data:{ symbol: zone.id, time: zone.updated_at.utc.to_s, count: zone.reports_count, flood: zone.positive_percent } do |
   %h3= zone.id
   .status
     - unless zone.positive_percent.nan?

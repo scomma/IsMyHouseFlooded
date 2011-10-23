@@ -39,7 +39,15 @@
 %div#sub
 
   %header
-    %h2 ติดตามสถานการณ์ล่าสุดจากพื้นที่ต่าง ๆ
+    /
+      %p.right คำนวณจากข้อมูลในรอบ 24 ชม. ล่าสุด
+    %h2
+      ติดตามสถานการณ์จากพื้นที่ต่าง ๆ
+      %small#sorter
+        เรียงตาม
+        = link_to "เวลา", '#time'
+        = link_to "จำนวน", '#count'
+        = link_to "สถานการณ์", '#flood'
 
   %section#zones
     = render @zones

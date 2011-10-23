@@ -7,6 +7,9 @@ body {
   h2 {
     font-size: 140%;
   }
+  a {
+    color: white;
+  }
 }
 
 div#main {
@@ -18,8 +21,19 @@ div#main {
 
 div#sub {
   header {
-    h2 { margin: 0; }
-    padding: 0.8em 1em;
+    h2 {
+      margin: 0;
+    }
+    small {
+      font-size: 60%;
+    }
+    p {
+      margin: 6px 0 0;
+    }
+    .right {
+      float: right;
+    }
+    padding: 0.8em 20px; /* so it lines up with isotope */
     background: #1b9ad3;
     border-top: 1px solid #1579a5;
     box-shadow: 0 1px 0 #52bae9 inset;
