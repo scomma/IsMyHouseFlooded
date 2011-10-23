@@ -7,23 +7,23 @@ body {
 }
 
 section#landing {
-    text-align: center;
-    margin: 4em auto;
-    width: 400px;
-    h2 {
-      margin: 2em 0 1em 0;
-      font-size: 24px;
-      text-shadow: 0 1px 0 #fff;
-      color: #333;
-      strong {
-        color: #e00;
-        margin: 0 0.1em;
-      }
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+  h2 {
+    margin: 2em 0 1em 0;
+    font-size: 24px;
+    text-shadow: 0 1px 0 #fff;
+    color: #333;
+    strong {
+      color: #e00;
+      margin: 0 0.1em;
     }
-    input, textarea, button {
-        font-size: 14px;
-        &[type="text"] { outline: none; }
-    }
+  }
+  input, textarea, button {
+    font-size: 14px;
+    &[type="text"] { outline: none; }
+  }
 }
 
 .description {
