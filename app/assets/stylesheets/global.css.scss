@@ -1,12 +1,7 @@
-@font-face {
-  font-family: "palgo";
-  src: url(palgo.otf);
-}
-
 body {
   margin: 0;
   h1, h2 {
-    font-family: "palgo", "Lucida Grande", "Leelawadee", sans-serif;
+    font-family: sans-serif;
     font-weight: normal;
   }
   h2 {
@@ -24,7 +19,7 @@ div#main {
 div#sub {
   header {
     h2 { margin: 0; }
-    padding: 1.2em 1em 0.9em;
+    padding: 0.8em 1em;
     background: #1b9ad3;
     border-top: 1px solid #1579a5;
     box-shadow: 0 1px 0 #52bae9 inset;
