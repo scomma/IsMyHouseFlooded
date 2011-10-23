@@ -1,7 +1,7 @@
 %div#main
 
   %header
-    %h1= link_to "บ้านฉันจมหรือยัง", "/"
+    %h1= link_to "บ้านฉันท่วมหรือยัง", "/"
 
   %section#landing
     = form_tag new_report_path, method: :post, id: 'initiate_report' do
@@ -22,7 +22,7 @@
         %dt.for_buttonset ขณะนี้
         %dd.buttonset
           = f.radio_button :flooded, true
-          = f.label :flooded_true, "ท่วมแล้ว"
+          = f.label :flooded_true, "ท่วมขังแล้ว"
           = f.radio_button :flooded, false
           = f.label :flooded_false, "ยังไม่ท่วม"
 
