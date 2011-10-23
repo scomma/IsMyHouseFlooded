@@ -1,10 +1,10 @@
 %div#main
 
   %header
-    %h1= link_to "บ้านฉันท่วมหรือยัง", "/"
+    %h1= link_to "บ้านฉันท่วมหรือยัง", zones_path
 
   %section#landing
-    = form_tag new_report_path, method: :post, id: 'initiate_report' do
+    = form_tag new_report_path, method: :post, id: 'initiate_report', style: ('display:none' if @report.zone_id.present?) do
       %h2.description
         :markdown
           กรอก**รหัสไปรษณีย์**ของพื้นที่ที่ท่านพักอาศัยอยู่
@@ -13,7 +13,7 @@
           = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
           = submit_tag "แจ้งสถานการณ์"
 
-    = form_for @report, method: :post do |f|
+    = form_for @report, method: :post, html:{ style: ('display:none' unless @report.zone_id.present?) } do |f|
       %h2
         แจ้งสถานการณ์ในพื้นที่
         %strong#zone_id_label
@@ -36,18 +36,19 @@
             = f.submit "บันทึก"
             = button_tag "ยกเลิก", id: 'cancel_report', type: 'button'
 
-%div#sub
+- if @zones
+  %div#sub
 
-  %header
-    /
-      %p.right คำนวณจากข้อมูลในรอบ 24 ชม. ล่าสุด
-    %h2
-      ติดตามสถานการณ์จากพื้นที่ต่าง ๆ
-      %small#sorter
-        เรียงตาม
-        = link_to "เวลา", '#time'
-        = link_to "จำนวน", '#count'
-        = link_to "สถานการณ์", '#flood'
+    %header
+      /
+        %p.right คำนวณจากข้อมูลในรอบ 24 ชม. ล่าสุด
+      %h2
+        ติดตามสถานการณ์จากพื้นที่ต่าง ๆ
+        %small#sorter(style="display:none")
+          เรียงตาม
+          = link_to "เวลา", '#time'
+          = link_to "จำนวน", '#count'
+          = link_to "สถานการณ์", '#flood'
 
-  %section#zones
-    = render @zones
+    %section#zones
+      = render @zones

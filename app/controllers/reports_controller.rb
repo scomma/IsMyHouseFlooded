@@ -1,9 +1,9 @@
 class ReportsController < ApplicationController
-  before_filter :load_zones
   respond_to :html
 
   def new
-    @report = Report.new
+    @report = Report.new zone_id: params[:zone_id]
+    render 'zones/index'
   end
 
   def create
@@ -15,9 +15,4 @@ class ReportsController < ApplicationController
     @report = Report.find params[:id]
     redirect_to zones_path anchor: "zone_%d" % @report.zone_id
   end
-
-  private
-    def load_zones
-      @zones = Zone.all
-    end
 end

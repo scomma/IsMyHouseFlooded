@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('#new_report').hide()
   $('#initiate_report input:submit').click ->
     zone_id = parseInt $('#zone_id').val()
     if 10000 < zone_id < 100000
@@ -21,6 +20,7 @@ $ ->
     $('#zones').isotope
       filter: if @value.length then ":contains(#{@value})" else ""
 
+  $('#sorter').show()
   $('#sorter a').click ->
     $('#zones').isotope
       sortBy: $(this).attr('href').slice(1)
