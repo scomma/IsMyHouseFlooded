@@ -10,6 +10,7 @@ gem 'rdiscount'
 
 group :development do
   gem 'mysql2'
+  gem 'heroku'
 end
 
 group :assets do

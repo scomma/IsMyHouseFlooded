@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     def authenticate_admin!
       authenticate_or_request_with_http_basic do |username, password|
         username == "noah" and
-        password == "lactobacillus"
+        Digest::SHA1.hexdigest(password) == "6057c39ce781ea2808fe4d1edb1c8610d07ef772"
       end
     end
 
