@@ -1,96 +1,74 @@
 @font-face {
-    font-family: "palgo";
-    src: url(palgo.otf);
+  font-family: "palgo";
+  src: url(palgo.otf);
 }
 
 body {
-    margin: 0;
-    h1, h2 {
-        font-family: "palgo", "Lucida Grande", "Leelawadee", sans-serif;
-        font-weight: normal;
-    }
-    h1 {
-        font-size: 180%;
-    }
-    h2 {
-        font-size: 140%;
-    }
+  margin: 0;
+  h1, h2 {
+    font-family: "palgo", "Lucida Grande", "Leelawadee", sans-serif;
+    font-weight: normal;
+  }
+  h2 {
+    font-size: 140%;
+  }
 }
 
 div#main {
-    background-image: url(stucco.png);
-    padding: 5em 2em 3em;
-    text-align: center;
-    header {
-        background-image: url(separator.png);
-        background-repeat: no-repeat;
-        background-position: 50% 100%;
-        padding-bottom: 3em;
-        text-align: center;
-        h1 {
-            text-indent: -10000em;
-            background-image: url(logo.png);
-            background-repeat: no-repeat;
-            margin: auto;
-            width: 436px;
-            height: 75px;
-            a {
-                float: left;
-                width: 436px;
-                height: 75px;
-            }
-        }
-    }
+  background-image: url(stucco.png);
+  padding: 2em 0 3em;
+  text-align: center;
+  header { display: none; }
 }
 
 div#sub {
-    header {
-        h2 { margin: 0; }
-        padding: 1.2em 1em 0.9em;
-        background: #1b9ad3;
-        border-top: 1px solid #1579a5;
-        box-shadow: 0 1px 0 #52bae9 inset;
-        color: #fff;
-        text-shadow: 0 -1px 0 #23262c;
-    }
+  header {
+    h2 { margin: 0; }
+    padding: 1.2em 1em 0.9em;
+    background: #1b9ad3;
+    border-top: 1px solid #1579a5;
+    box-shadow: 0 1px 0 #52bae9 inset;
+    color: #fff;
+    text-shadow: 0 -1px 0 #23262c;
+  }
 }
 
 form {
-    label {
-        display: none;
+  label {
+    display: none;
+  }
+  input.postcode {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+  }
+  input[type="submit"], button {
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    color: #666;
+    padding: 0.65em 0.8em;
+    border: 1px solid #a4a7ac;
+    border-radius: 3px;
+    background-image: linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
+    background-image: -o-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
+    background-image: -moz-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
+    background-image: -webkit-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
+    background-image: -ms-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.07, #e0e0e0),
+      color-stop(0.77, #fefefe)
+    );
+    -webkit-box-shadow: inset 0 0 0 1px #f3f3f3;
+    -moz-box-shadow: inset 0 0 0 1px #f3f3f3;
+    box-shadow: inset 0 0 0 1px #f3f3f3;
+    cursor: pointer;
+    &:hover { border-color: #777; }
+    &.clicked {
+      background: #e0e0e0;
+      color: #333;
     }
-    input.postcode {
-        color: #000;
-        font-weight: bold;
-        text-align: center;
-    }
-    input[type="submit"], button {
-        display: inline-block;
-        text-shadow: 0 1px 0 #fff;
-        color: #666;
-        padding: 0.65em 0.8em;
-        border: 1px solid #a4a7ac;
-        border-radius: 3px;
-        background-image: linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
-        background-image: -o-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
-        background-image: -moz-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
-        background-image: -webkit-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
-        background-image: -ms-linear-gradient(bottom, #e0e0e0 7%, #fefefe 77%);
-        background-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            color-stop(0.07, #e0e0e0),
-            color-stop(0.77, #fefefe)
-        );
-        -webkit-box-shadow: inset 0 0 0 1px #f3f3f3;
-        -moz-box-shadow: inset 0 0 0 1px #f3f3f3;
-        box-shadow: inset 0 0 0 1px #f3f3f3;
-        cursor: pointer;
-        &:hover { border-color: #777; }
-        &.clicked {
-            background: #e0e0e0;
-            color: #333;
-        }
-    }
+  }
 }
