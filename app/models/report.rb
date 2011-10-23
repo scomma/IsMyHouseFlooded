@@ -2,6 +2,11 @@ class Report < ActiveRecord::Base
   belongs_to :zone
   validates :zone_id, presence: true
 
+  validates_each :ip_address do |record, attr, value|
+    record.errors.add attr, "has to wait a minute before reporting again" if
+      Report.where(zone_id: record.zone_id).where("created_at > ?", 1.minute.ago).exists?
+  end
+
   before_create do
     self.create_zone! do |zone|
       zone.id = zone_id

@@ -7,8 +7,8 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.create params[:report]
-    respond_with @report
+    @report = Report.create params[:report].merge(ip_address: request.env['REMOTE_ADDR'])
+    redirect_to zones_path
   end
 
   def show

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020160258) do
+ActiveRecord::Schema.define(:version => 20111023113137) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111020160258) do
     t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ip_address"
   end
 
   add_index "reports", ["zone_id"], :name => "index_reports_on_zone_id"
