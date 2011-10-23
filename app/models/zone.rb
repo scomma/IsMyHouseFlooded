@@ -6,10 +6,18 @@ class Zone < ActiveRecord::Base
   has_many :reports
 
   def positive_percent
-    100.0 * positive_count / reports_count
+    reports_count > 0 ? 100.0 * positive_count / reports_count : 0
   end
 
   def negative_percent
     100.0 * negative_count / reports_count
+  end
+
+  def classification
+    positive_percent > 20 ? 'flooded' : 'dry'
+  end
+
+  def metadata
+    { symbol: id, time: updated_at.utc.to_s, count: reports_count, flood: positive_percent }
   end
 end
