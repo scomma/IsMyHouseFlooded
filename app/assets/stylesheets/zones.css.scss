@@ -8,15 +8,17 @@ body {
 
 section#landing {
     text-align: center;
-    margin: 2em auto;
+    margin: 4em auto;
     width: 400px;
-    p {
-        &.description {
-            margin-bottom: 20px;
-            font-size: 20px;
-            text-shadow: 0 1px 0 #fff;
-            color: #333;
-        }
+    h2 {
+      margin: 2em 0 1em 0;
+      font-size: 24px;
+      text-shadow: 0 1px 0 #fff;
+      color: #333;
+      strong {
+        color: #e00;
+        margin: 0 0.1em;
+      }
     }
     input, textarea, button {
         font-size: 14px;
@@ -55,42 +57,61 @@ section#landing {
 }
 
 #sub {
-  text-align: center;
-  box-shadow: inset rgba(0, 0, 0, 0.5) 0 8px 5px;
+  #zones { padding: 1em; }
+  article.zone {
+    background: #fff;
+    font-family: sans-serif;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-top: 4px solid #fff;
+    box-shadow: 0px 0px 2px #000;
 
-  #zones {
-    margin: auto;
-    max-width: 800px;
-    padding: 35px 0;
-    text-align: left;
+    h3 {
+      display: block;
+      width: 100%;
+      padding: 0.5em 0;
+      text-align: center;
+    }
+    div.status {
+      margin-top: 1.8em;
+      padding: 0.6em 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
 
-    .zone {
-      background: #333;
-      box-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px, rgba(255, 255, 255, 0.2) 0 -1px 0;
-      color: white;
-      text-shadow: #111 0 -1px 1px;
+    div.count {
+      bottom: 0;
+      font-size: 11px;
+      padding: 1em 0;
+      width: 100%;
+      background: #fff;
+      text-align: center;
+      text-shadow: 0 1px 0 #fff;
+      color: #333;
+      -webkit-border-radius: 0 0 3px 3px;
+      -moz-border-radius: 0 0 3px 3px;
+      border-radius: 0 0 3px 3px;
+    }
 
-      & > * {
-      }
-
+    &.flooded {
+      border-color: #ed1000;
       h3 {
-        bottom: 55px;
-        width: 100%;
-        text-align: center;
-        font-size: 150%;
+        background: #ff3021;
+        color: #fff;
       }
+      div.status { color: #ff3021; }
+    }
 
-      .status {
-        right: 10px;
-        bottom: 25px;
-        font-size: 10pt;
+    &.dry {
+      border-color: #81c425;
+      h3 {
+        background: #74af16;
+        color: #fff;
       }
-
-      .count {
-        right: 10px;
-        bottom: 10px;
-        font-size: 8pt;
-      }
+      div.status { color: #74af16; }
     }
   }
 }

@@ -1,7 +1,7 @@
-= content_tag_for :article, zone, data:{ symbol: zone.id } do
+= content_tag_for :article, zone, { class: zone.positive_percent >= 20 ? "flooded" : "dry" }, data: { symbol: zone.id } do
   %h3= zone.id
   .status
     - unless zone.positive_percent.nan?
       ท่วม
       = "%.0f%%" % zone.positive_percent
-  .count ผู้รายงาน #{zone.reports_count} คน
+  .count จากผู้รายงาน #{zone.reports_count} คน

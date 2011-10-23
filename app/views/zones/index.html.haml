@@ -5,7 +5,9 @@
 
   %section#landing
     = form_tag new_report_path, method: :post, id: 'initiate_report' do
-      %h2.description กรอกรหัสไปรษณีย์ของพื้นที่ที่ท่านพักอาศัยอยู่
+      %h2.description
+        :markdown
+          กรอก**รหัสไปรษณีย์**ของพื้นที่ที่ท่านพักอาศัยอยู่
       %p.field<
         = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
         = submit_tag "แจ้งสถานการณ์"
@@ -13,7 +15,7 @@
     = form_for @report, method: :post do |f|
       %h2
         แจ้งสถานการณ์ในพื้นที่
-        %span#zone_id_label
+        %strong#zone_id_label
         = f.hidden_field :zone_id
 
       %dl
@@ -34,9 +36,8 @@
 
 %div#sub
 
-  /
-    %header
-      %h2 ติดตามสถานการณ์ล่าสุดจากพื้นที่ต่าง ๆ
+  %header
+    %h2 ติดตามสถานการณ์ล่าสุดจากพื้นที่ต่าง ๆ
 
   %section#zones
     = render @zones
