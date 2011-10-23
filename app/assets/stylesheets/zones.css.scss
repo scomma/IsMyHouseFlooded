@@ -58,7 +58,11 @@ section#landing {
 }
 
 #sub {
-  #zones { padding: 1em; }
+  #zones {
+    padding: 1em;
+    min-height: 200px;
+  }
+  
   article.zone {
     background: #fff;
     font-family: sans-serif;
