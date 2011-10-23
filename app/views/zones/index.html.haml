@@ -8,9 +8,10 @@
       %h2.description
         :markdown
           กรอก**รหัสไปรษณีย์**ของพื้นที่ที่ท่านพักอาศัยอยู่
-      %p.field<
-        = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
-        = submit_tag "แจ้งสถานการณ์"
+      %div.form
+        %p.field<
+          = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
+          = submit_tag "แจ้งสถานการณ์"
 
     = form_for @report, method: :post do |f|
       %h2
@@ -18,21 +19,22 @@
         %strong#zone_id_label
         = f.hidden_field :zone_id
 
-      %dl
-        %dt.for_buttonset ขณะนี้
-        %dd.buttonset
-          = f.radio_button :flooded, true
-          = f.label :flooded_true, "ท่วมขังแล้ว"
-          = f.radio_button :flooded, false
-          = f.label :flooded_false, "ยังไม่ท่วม"
+      %div.form
+        %dl
+          %dt.for_buttonset ขณะนี้
+          %dd.buttonset
+            = f.radio_button :flooded, true
+            = f.label :flooded_true, "ท่วมขังแล้ว"
+            = f.radio_button :flooded, false
+            = f.label :flooded_false, "ยังไม่ท่วม"
 
-        %dt.for_text  หมายเหตุ
-        %dd= f.text_area :comment, placeholder: "(ถ้ามี)", rows: 2
+          %dt.for_text  หมายเหตุ
+          %dd= f.text_area :comment, placeholder: "(ถ้ามี)", rows: 2
 
-        %dt
-        %dd
-          = f.submit "บันทึก"
-          = button_tag "ยกเลิก", id: 'cancel_report', type: 'button'
+          %dt
+          %dd
+            = f.submit "บันทึก"
+            = button_tag "ยกเลิก", id: 'cancel_report', type: 'button'
 
 %div#sub
 

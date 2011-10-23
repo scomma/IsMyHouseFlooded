@@ -23,6 +23,10 @@ section#landing {
     font-size: 14px;
     &[type="text"] { outline: none; }
   }
+  div.form {
+    width: 400px;
+    margin: auto;
+  }
 }
 
 .description {
