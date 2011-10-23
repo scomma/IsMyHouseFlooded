@@ -1,6 +1,7 @@
 class Report < ActiveRecord::Base
   belongs_to :zone
   validates :zone_id, presence: true
+  validates :flooded, presence: true
 
   validates_each :ip_address do |record, attr, value|
     record.errors.add attr, "has to wait a minute before reporting again" if
