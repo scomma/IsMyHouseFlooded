@@ -1,7 +1,7 @@
 %div#main
 
   %header
-    %h1= link_to "บ้านฉันท่วมหรือยัง", root_path
+    %h1= link_to image_tag('logo.png', alt: "บ้านฉันท่วมหรือยัง"), root_path
 
   %section#landing
     = form_tag new_report_path, method: :post, id: 'initiate_report', style: ('display:none' if @report.zone_id.present?) do
@@ -18,7 +18,7 @@
         |
         = link_to "API", page_path('api'), class: 'remote'
         |
-        = link_to "Fork Me", "http://github.com/scomma/IsMyHouseFlooded"
+        = link_to "Fork", "http://github.com/scomma/IsMyHouseFlooded"
         |
         = link_to image_tag('cc-by-sa.png'), "http://creativecommons.org/licenses/by-sa/3.0/"
 
