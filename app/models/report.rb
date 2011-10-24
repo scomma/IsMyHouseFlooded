@@ -46,4 +46,8 @@ class Report < ActiveRecord::Base
   def blank?
     flooded == nil and comment.blank?
   end
+
+  def as_json(options = {})
+    super options.merge(except: [:ip_address, :author, :updated_at])
+  end
 end

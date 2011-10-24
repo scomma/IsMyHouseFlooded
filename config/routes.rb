@@ -6,5 +6,6 @@ Ismyhouseflooded::Application.routes.draw do
   post 'reports/new' => 'reports#new'
   
   root to: 'zones#index'
-  resources :zones, only: [:index, :show], path: ''
+  get 'index' => 'zones#index', as: 'zones'
+  get ':id'   => 'zones#show',  as: 'zone'
 end
