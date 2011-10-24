@@ -18,7 +18,7 @@ $ ->
 
   $('#zone_id').keyup ->
     $('#zones').isotope
-      filter: if @value.length then ":contains(#{@value})" else '.significant'
+      filter: if @value.length > 1 then ":contains(#{@value})" else '.significant'
 
   $('#sorter').show()
   $('#sorter a').click ->
