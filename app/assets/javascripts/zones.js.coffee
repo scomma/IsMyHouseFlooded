@@ -25,6 +25,7 @@ $ ->
     $('#zones').isotope
       sortBy: $(this).attr('href').slice(1)
       sortAscending: false
+    false
 
   $('#zones').isotope
     itemSelector: '.zone'
