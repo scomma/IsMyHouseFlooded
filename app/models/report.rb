@@ -34,4 +34,8 @@ class Report < ActiveRecord::Base
   def to_s
     comment
   end
+
+  def blank?
+    flooded == nil and comment.blank?
+  end
 end

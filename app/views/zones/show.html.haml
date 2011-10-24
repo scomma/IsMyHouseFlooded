@@ -2,9 +2,10 @@
   %h3= @zone.id
   %ul.feed
     - @zone.reports.each do |report|
-      = content_tag_for :li, report do
-        %small.right
-          = thai_time time_ago_in_words report.created_at
-        %strong= report.classification
-        = "&mdash;".html_safe if report.classification.present? and report.comment.present?
-        = report
+      - unless report.blank?
+        = content_tag_for :li, report do
+          %small.right
+            = thai_time time_ago_in_words report.created_at
+          %strong= report.classification
+          = "&mdash;".html_safe if report.classification.present? and report.comment.present?
+          = report
