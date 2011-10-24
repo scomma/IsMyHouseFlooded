@@ -146,7 +146,7 @@ article.zone {
 
 .feed {
   margin: 0;
-  width: 500px;
+  min-width: 500px;
   padding: 0;
   background: #fcf4cf;
   font-size: 13px;
@@ -168,6 +168,8 @@ article.zone {
   }
 }
 
-#fancybox-content article.zone {
-  box-shadow: none;
+#fancybox-content {
+  article.zone {
+    box-shadow: none;
+  }
 }
