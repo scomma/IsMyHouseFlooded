@@ -18,7 +18,7 @@ $ ->
 
   $('#zone_id').keyup ->
     $('#zones').isotope
-      filter: if @value.length then ":contains(#{@value})" else ""
+      filter: if @value.length then ":contains(#{@value})" else '.significant'
 
   $('#sorter').show()
   $('#sorter a').click ->
@@ -30,6 +30,7 @@ $ ->
   $('#zones').isotope
     itemSelector: '.zone'
     layoutMode: 'masonry'
+    filter: '.significant'
     getSortData:
       time:  ($zone) -> $zone.data('time')
       count: ($zone) -> parseInt $zone.data('count')
