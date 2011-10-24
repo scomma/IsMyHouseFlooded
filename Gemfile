@@ -8,6 +8,7 @@ gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
 gem 'squeel'
 gem 'rdiscount'
 gem 'unicorn'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'mysql2'
@@ -22,6 +23,5 @@ end
 
 group :production do
   gem 'pg'
-  gem 'newrelic_rpm'
   gem 'asset_sync'
 end
