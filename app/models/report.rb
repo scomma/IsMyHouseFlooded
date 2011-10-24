@@ -4,7 +4,7 @@ class Report < ActiveRecord::Base
   validates :zone_id, presence: true
 
   validates_each :ip_address, on: :create do |record, attr, value|
-    record.errors.add attr, "has to wait a minute before reporting again" if
+    record.errors.add attr, "ไม่สามารถรายงานถี่เกินไป" if
       Report.where{(zone_id == record.zone_id) & (created_at > 1.minute.ago)}.exists?
   end
 
@@ -24,6 +24,14 @@ class Report < ActiveRecord::Base
   end
 
   def classification
+    if flooded == true
+      'flooded'
+    elsif flooded == false
+      'dry'
+    end
+  end
+
+  def human_flooded
     if flooded == true
       "ท่วม"
     elsif flooded == false

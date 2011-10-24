@@ -162,6 +162,7 @@ ul.feed {
     font-size: 13px;
     min-height: 26px;
     line-height: 26px;
+    background-color: #eee;
 
     time {
       position: absolute;
@@ -188,6 +189,7 @@ ul.feed {
       text-align: center;
       color: #fff;
       font-size: 12px;
+      background-color: #ccc;
     }
 
     span {
@@ -208,8 +210,12 @@ ul.feed {
   }
 }
 
-body > article.zone ul.feed {
-  width: 100%;
+body > article.zone {
+  margin: 1em;
+
+  ul.feed {
+    width: 100%;
+  }
 }
 
 #fancybox-content {
