@@ -6,6 +6,7 @@ class ZonesController < ApplicationController
 
   def show
     @zone = Zone.includes(:reports).find params[:id]
+    render layout: false if request.xhr?
   end
 
 end
