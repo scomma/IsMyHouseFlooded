@@ -6,11 +6,11 @@ Ismyhouseflooded::Application.routes.draw do
   resources :reports, only: [:new, :create]
   post 'reports/new' => 'reports#new'
 
-  resources :pages, only: :show
-
   assets_host = redirect "#{Rails.application.config.action_controller.asset_host}/assets/%{asset}"
   get 'fancybox/:asset' => assets_host, constraints:{ asset: /.+/ }
   get '*legacy_browser_support/fancybox/:asset' => assets_host, constraints:{ asset: /.+/ }
+
+  resources :pages, only: :show
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
