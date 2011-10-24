@@ -1,19 +1,37 @@
 body {
   margin: 0;
   h1, h2 {
-    font-family: sans-serif;
+    font-family: "Lucida Grande", "Leelawadee", sans-serif;
     font-weight: normal;
-  }
-  h2 {
-    font-size: 140%;
   }
 }
 
 div#main {
   background-image: url(stucco.png);
-  padding: 2em 0 3em;
+  padding: 2em 0 1em;
   text-align: center;
-  header { display: none; }
+  header {
+    /*
+      background-image: url(separator.png);
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      padding-bottom: 3em;
+    */
+    text-align: center;
+    h1 {
+      text-indent: -10000em;
+      background-image: url(logo.png);
+      background-repeat: no-repeat;
+      margin: auto;
+      width: 436px;
+      height: 75px;
+      a {
+        float: left;
+        width: 436px;
+        height: 75px;
+      }
+    }
+  }
 }
 
 div#sub {
