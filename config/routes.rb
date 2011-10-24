@@ -13,4 +13,14 @@ Ismyhouseflooded::Application.routes.draw do
   resources :pages, only: :show
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  not_found = redirect '/404.html'
+  get 'sitemap.xml'          => not_found
+  get 'crossdomain.xml'      => not_found
+  get 'apple-touch-icon.png' => not_found
+  get 'apple-touch-icon-114x114.png' => not_found
+  get 'apple-touch-icon-72x72-precomposed.png' => not_found
+  get 'apple-touch-icon-57x57-precomposed.png' => not_found
+
+  get '*a' => redirect('/')
 end
