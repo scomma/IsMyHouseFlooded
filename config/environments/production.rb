@@ -14,7 +14,7 @@ Ismyhouseflooded::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
-  # Don't fallback to assets pipeline if a precompiled asset is missed
+  # Do fallback to assets pipeline if a precompiled asset is missed (needed for rails_admin)
   config.assets.compile = true
 
   # Generate digests for assets URLs
@@ -40,7 +40,7 @@ Ismyhouseflooded::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "http://assets.ismyhouseflooded.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( rails_admin/rails_admin.css )
