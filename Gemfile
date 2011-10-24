@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem "haml", ">= 3.0.0"
-gem "haml-rails"
-gem "jquery-rails"
-gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'squeel'
 gem 'rdiscount'
 gem 'unicorn'
