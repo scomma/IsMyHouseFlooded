@@ -1,7 +1,7 @@
 %div#main
 
   %header
-    %h1= link_to "บ้านฉันท่วมหรือยัง", zones_path
+    %h1= link_to "บ้านฉันท่วมหรือยัง", root_path
 
   %section#landing
     = form_tag new_report_path, method: :post, id: 'initiate_report', style: ('display:none' if @report.zone_id.present?) do
