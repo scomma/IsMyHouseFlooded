@@ -1,8 +1,9 @@
 Ismyhouseflooded::Application.routes.draw do
-  root to: 'zones#index'
-  resources :zones, only: [:index, :show], path: ''
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :reports, only: [:new, :create]
   post 'reports/new' => 'reports#new'
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  root to: 'zones#index'
+  resources :zones, only: [:index, :show], path: ''
 end
