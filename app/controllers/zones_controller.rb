@@ -4,6 +4,7 @@ class ZonesController < ApplicationController
     @report = Report.new
 
     if params[:format] == 'json'
+      headers['Cache-Control'] = 'public, max-age=5'
       render json: @zones.as_json
       
     else

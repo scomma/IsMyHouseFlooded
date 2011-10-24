@@ -36,5 +36,5 @@ $ ->
       count: ($zone) -> parseInt $zone.data('count')
       flood: ($zone) -> parseFloat $zone.data('flood')
 
-  $('.zone h3 a').each ->
+  $('.zone h3 a, a.remote').each ->
     $(this).fancybox href: "#{@href}.partial"

@@ -13,6 +13,15 @@
           = text_field_tag :zone_id, "", size: 20, class: 'postcode', maxlength: 5, autofocus: true, pattern: '[0-9]*'
           = submit_tag "แจ้งสถานการณ์"
 
+      %p#links
+        = link_to "คำถามที่พบบ่อย", page_path('faqs'), class: 'remote'
+        |
+        = link_to "API", page_path('api'), class: 'remote'
+        |
+        = link_to "Fork Me", "http://github.com/scomma/IsMyHouseFlooded"
+        |
+        = link_to image_tag('cc-by-sa.png'), "http://creativecommons.org/licenses/by-sa/3.0/"
+
     = form_for @report, method: :post, html:{ style: ('display:none' unless @report.zone_id.present?) } do |f|
       %h2
         แจ้งสถานการณ์ในพื้นที่

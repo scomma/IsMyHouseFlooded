@@ -29,6 +29,20 @@ section#landing {
   }
 }
 
+#links {
+  font-size: 13px;
+  color: #ccc;
+  text-shadow: white 0 1px 1px;
+  a {
+    margin: 0 0.2em;
+    color: #666;
+    text-decoration: none;
+    img {
+      margin-bottom: -2px;
+    }
+  }
+}
+
 .description {
   color: #333;
   text-shadow: white 0 1px 1px;

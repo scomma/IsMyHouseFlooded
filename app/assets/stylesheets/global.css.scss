@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  color: #333;
   h1, h2 {
     font-family: "Lucida Grande", "Leelawadee", sans-serif;
     font-weight: normal;
@@ -91,5 +92,18 @@ form {
       background: #e0e0e0;
       color: #333;
     }
+  }
+}
+
+#fancybox-content {
+}
+
+.information {
+  font-size: 13px;
+  a {
+    color: #166a8e;
+  }
+  p {
+    line-height: 170%;
   }
 }
