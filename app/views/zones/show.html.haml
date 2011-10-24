@@ -3,9 +3,7 @@
   %ul.feed
     - @zone.reports.each do |report|
       - unless report.blank?
-        = content_tag_for :li, report do
-          %small.right
-            = thai_time time_ago_in_words report.created_at
+        = content_tag_for :li, report, class: report.flooded?? 'flooded' : 'dry' do
+          %time= thai_time time_ago_in_words report.created_at
           %strong= report.classification
-          = "&mdash;".html_safe if report.classification.present? and report.comment.present?
-          = report
+          %span= report
