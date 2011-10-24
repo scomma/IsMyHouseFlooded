@@ -1,5 +1,5 @@
 = content_tag_for :article, zone, class: zone.classification, data: zone.metadata do
-  %h3= zone.id
+  %h3= link_to zone, [zone]
   .status
     ท่วม
     = "%.0f%%" % zone.positive_percent

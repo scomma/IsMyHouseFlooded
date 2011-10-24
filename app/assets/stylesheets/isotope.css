@@ -61,7 +61,7 @@ body {
   height: 100%;
 }
 
-.zone {
+.isotope-item {
   width: 110px;
   height: 110px;
   margin: 5px;
@@ -75,51 +75,51 @@ body {
           border-top-right-radius: 1.2em;
 }
 
-.zone.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
-.zone.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
-.zone.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
-.zone.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
-.zone.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
-.zone.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
-.zone.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
-.zone.other.nonmetal  { background: #00F; background: hsl( 252, 100%, 50%); }
-.zone.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
-.zone.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
+.isotope-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
+.isotope-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
+.isotope-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
+.isotope-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
+.isotope-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
+.isotope-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
+.isotope-item.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
+.isotope-item.other.nonmetal  { background: #00F; background: hsl( 252, 100%, 50%); }
+.isotope-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
+.isotope-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
 
-.zone * {
+.isotope-item > * {
   position: absolute;
   margin: 0;
 }
 
-.zone .symbol {
+.isotope-item .symbol {
   left: 0.2em;
   top: 0.4em;
   font-size: 3.8em;
   line-height: 1.0em;
   color: #FFF;
 }
-.zone.large .symbol {
+.isotope-item.large .symbol {
   font-size: 4.5em;
 }
 
-.zone.fake .symbol {
+.isotope-item.fake .symbol {
   color: #000;
 }
 
-.zone .name {
+.isotope-item .name {
   left: 0.5em;
   bottom: 1.6em;
   font-size: 1.05em;
 }
 
-.zone .weight {
+.isotope-item .weight {
   font-size: 0.9em;
   left: 0.5em;
   bottom: 0.5em;
 }
 
-.zone .number {
+.isotope-item .number {
   font-size: 1.25em;
   font-weight: bold;
   color: hsla(0,0%,0%,.5);
@@ -127,35 +127,35 @@ body {
   top: 0.5em;
 }
 
-.variable-sizes .zone.width2 { width: 230px; }
+.variable-sizes .isotope-item.width2 { width: 230px; }
 
-.variable-sizes .zone.height2 { height: 230px; }
+.variable-sizes .isotope-item.height2 { height: 230px; }
 
-.variable-sizes .zone.width2.height2 {
+.variable-sizes .isotope-item.width2.height2 {
   font-size: 2.0em;
 }
 
-.zone.large,
-.variable-sizes .zone.large,
-.variable-sizes .zone.large.width2.height2 {
+.isotope-item.large,
+.variable-sizes .isotope-item.large,
+.variable-sizes .isotope-item.large.width2.height2 {
   font-size: 3.0em;
   width: 350px;
   height: 350px;
   z-index: 100;
 }
 
-.clickable .zone:hover {
+.clickable .isotope-item:hover {
   cursor: pointer;
 }
 
-.clickable .zone:hover h3 {
+.clickable .isotope-item:hover h3 {
   text-shadow:
     0 0 10px white,
     0 0 10px white
   ;
 }
 
-.clickable .zone:hover h2 {
+.clickable .isotope-item:hover h2 {
   color: white;
 }
 

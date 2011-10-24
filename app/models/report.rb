@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Report < ActiveRecord::Base
   belongs_to :zone
   validates :zone_id, presence: true
@@ -20,5 +21,17 @@ class Report < ActiveRecord::Base
       zone.reports_count  += 1 if flooded.in? [true, false]
       zone.save
     end
+  end
+
+  def classification
+    if flooded == true
+      "ท่วม"
+    elsif flooded == false
+      "ไม่ท่วม"
+    end
+  end
+
+  def to_s
+    comment
   end
 end

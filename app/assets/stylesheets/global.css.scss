@@ -7,9 +7,6 @@ body {
   h2 {
     font-size: 140%;
   }
-  a {
-    color: white;
-  }
 }
 
 div#main {
@@ -30,8 +27,8 @@ div#sub {
     p {
       margin: 6px 0 0;
     }
-    .right {
-      float: right;
+    a {
+      color: white;
     }
     padding: 0.8em 20px; /* so it lines up with isotope */
     background: #1b9ad3;
@@ -77,4 +74,8 @@ form {
       color: #333;
     }
   }
+}
+
+.right {
+  float: right;
 }

@@ -5,7 +5,7 @@ class ZonesController < ApplicationController
   end
 
   def show
-    @zone = Zone.find params[:id]
+    @zone = Zone.includes(:reports).find params[:id]
   end
 
 end

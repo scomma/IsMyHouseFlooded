@@ -33,3 +33,5 @@ $ ->
       time:  ($zone) -> $zone.data('time')
       count: ($zone) -> parseInt $zone.data('count')
       flood: ($zone) -> parseFloat $zone.data('flood')
+
+  $('.zone h3 a').fancybox()
