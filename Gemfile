@@ -7,7 +7,7 @@ gem "jquery-rails"
 gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
 gem 'squeel'
 gem 'rdiscount'
-gem 'thin'
+gem 'unicorn'
 
 group :development do
   gem 'mysql2'
