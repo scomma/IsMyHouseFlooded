@@ -95,7 +95,10 @@ form {
   }
 }
 
-#fancybox-content {
+body > .information {
+  background: white url(logo.png) 10px 15px no-repeat;
+  padding: 100px 10px 10px;
+  margin: 20px;
 }
 
 .information {
