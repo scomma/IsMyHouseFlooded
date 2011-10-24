@@ -15,12 +15,12 @@ class Zone < ActiveRecord::Base
 
   def classification
     [positive_percent > 20 ? 'flooded' : 'dry',
-     reports_count > 3 ? 'significant' : 'insignificant'
+     reports_count > 9 ? 'significant' : 'insignificant'
     ].join ' '
   end
 
   def metadata
-    { symbol: id, time: updated_at.utc.to_s, count: reports_count, flood: positive_percent }
+    { symbol: id, time: updated_at.utc.to_s, count: reports_count, flood: positive_percent.round }
   end
 
   def to_s
