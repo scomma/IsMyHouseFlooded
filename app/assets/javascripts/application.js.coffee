@@ -17,3 +17,6 @@ $ ->
   $('input:submit, button').live 'mouseout', ->
     $(this).removeClass 'clicked'
   $('.buttonset').buttonset()
+
+  $('.zone h3 a, a.remote').each ->
+    $(this).fancybox href: "#{@href}.partial"
