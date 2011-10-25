@@ -26,4 +26,13 @@ class Zone < ActiveRecord::Base
   def to_s
     id
   end
+
+
+  def update_statistics!
+    counts = reports.where{created_at > 1.day.ago}.group{flooded}.count
+    self.positive_count = counts[true]  || 0
+    self.negative_count = counts[false] || 0
+    self.reports_count  = positive_count + negative_count
+    save!
+  end
 end
