@@ -45,6 +45,16 @@ section#landing {
 }
 
 #new_report {
+  h2 {
+    small {
+      display: block;
+      margin: 0.3em 0 1.5em;
+    }
+    &.hint {
+      display: none;
+    }
+  }
+
   dl {
     width: 400px;
     text-align: left;

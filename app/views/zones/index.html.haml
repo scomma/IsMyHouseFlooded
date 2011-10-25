@@ -23,10 +23,17 @@
         = link_to image_tag('cc-by-sa.png'), "http://creativecommons.org/licenses/by-sa/3.0/"
 
     = form_for @report, method: :post, html:{ style: ('display:none' unless @report.zone_id.present?) } do |f|
-      %h2
+      = f.hidden_field :zone_id
+      %h2.main
         แจ้งสถานการณ์ในพื้นที่
-        %strong#zone_id_label
-        = f.hidden_field :zone_id
+        %strong.zone_id_label
+      %h2.hint
+        เมื่อวานนี้ท่านได้รายงานสถานการณ์จากพื้นที่
+        %strong.zone_id_label
+        %small
+          เราอยากทราบว่าวันนี้ สถานการณ์ในพื้นที่
+          %strong.zone_id_label
+          เป็นอย่างไรบ้างครับ
 
       %div.form
         %dl
