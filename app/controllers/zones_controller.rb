@@ -16,15 +16,15 @@ class ZonesController < ApplicationController
     @zone = Zone.includes(:reports).find params[:id]
 
     if params[:format] == 'partial' or request.xhr?
-      # headers['Cache-Control'] = 'public, max-age=30'
+      headers['Cache-Control'] = 'public, max-age=300'
       render layout: false
 
     elsif params[:format] == 'json'
-      # headers['Cache-Control'] = 'public, max-age=5'
+      headers['Cache-Control'] = 'public, max-age=5'
       render json: @zone.as_json(include: {reports: {except: [:ip_address, :author, :updated_at, :zone_id]}})
 
     else
-      # headers['Cache-Control'] = 'public, max-age=30'
+      headers['Cache-Control'] = 'public, max-age=300'
     end
   end
 
