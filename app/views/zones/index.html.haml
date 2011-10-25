@@ -14,9 +14,9 @@
           = submit_tag "แจ้งสถานการณ์"
 
       %p#links
-        = link_to "คำถามที่พบบ่อย", page_path('faqs'), class: 'remote'
+        = link_to "คำถามที่พบบ่อย", page_path('faqs'), id: 'faqs', class: 'remote'
         |
-        = link_to "API", page_path('api'), class: 'remote'
+        = link_to "API", page_path('api'), id: 'api', class: 'remote'
         |
         = link_to "Fork", "http://github.com/scomma/IsMyHouseFlooded"
         |
