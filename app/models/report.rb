@@ -23,6 +23,8 @@ class Report < ActiveRecord::Base
     end
   end
 
+  scope :recent, ->{ where{created_at > 12.hours.ago} }
+
   def classification
     if flooded == true
       'flooded'

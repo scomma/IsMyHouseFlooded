@@ -13,6 +13,7 @@ gem 'newrelic_rpm'
 group :development do
   gem 'mysql2'
   gem 'heroku'
+  gem 'taps'
 end
 
 group :assets do

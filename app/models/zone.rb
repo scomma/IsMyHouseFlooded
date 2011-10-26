@@ -5,6 +5,10 @@ class Zone < ActiveRecord::Base
 
   has_many :reports, order: 'created_at DESC'
 
+  def recent_reports
+    reports.recent
+  end
+
   def positive_percent
     reports_count > 0 ? 100.0 * positive_count / reports_count : 0
   end
@@ -29,7 +33,7 @@ class Zone < ActiveRecord::Base
 
 
   def update_statistics!
-    counts = reports.where{created_at > 1.day.ago}.except(:order).group{flooded}.count
+    counts = recent_reports.except(:order).group{flooded}.count
     self.positive_count = counts[true]  || 0
     self.negative_count = counts[false] || 0
     self.reports_count  = positive_count + negative_count

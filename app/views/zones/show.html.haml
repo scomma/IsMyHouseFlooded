@@ -1,7 +1,7 @@
 = content_tag_for :article, @zone, class: @zone.classification, data: @zone.metadata do
   %h3= @zone.id
   %ul.feed
-    - @zone.reports.each do |report|
+    - @zone.recent_reports.each do |report|
       - unless report.blank?
         = content_tag_for :li, report, class: report.classification do
           %time= thai_time time_ago_in_words report.created_at
