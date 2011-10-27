@@ -1,6 +1,7 @@
 = content_tag :article, id: zone.id, class: "zone %s" % zone.classification, data: zone.metadata do
-  %h3.linked= link_to zone, [zone], class: 'remote'
-  .status
-    ท่วม
-    = "%.0f%%" % zone.positive_percent
-  .count ผู้รายงาน #{zone.reports_count} ท่าน
+  = link_to [zone], class: 'remote' do
+    %h3= zone
+    .status
+      ท่วม
+      = "%.0f%%" % zone.positive_percent
+    .count ผู้รายงาน #{zone.reports_count} ท่าน

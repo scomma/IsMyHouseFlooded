@@ -83,6 +83,43 @@ section#landing {
 #zones {
   padding: 1em;
   min-height: 200px;
+
+  article.zone {
+    margin: 5px 5px 5px;
+    width: 105px;
+    height: 110px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+    * {
+      position: absolute;
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+
+    & > a {
+      height: 100%;
+      text-decoration: none;
+    }
+
+    h3 {
+      top: 0;
+    }
+
+    div.status {
+      top: 48px;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    div.count {
+      top: 84px;
+      font-size: 11px;
+      color: #333;
+    }
+  }
 }
 
 article.zone {
@@ -93,72 +130,35 @@ article.zone {
   border-radius: 3px;
   border-top: 4px solid #fff;
   box-shadow: 0px 0px 2px #000;
+  overflow: hidden;
 
   h3 {
-    display: block;
-    width: 100%;
-    height: 22px;
     margin: 0;
+    height: 22px;
     padding: 9px 0;
     text-align: center;
-
-    &.linked {
-      padding: 0;
-      height: 40px;
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-      width: 100%;
-      display: block;
-      padding: 9px 0;
-    }
-  }
-
-  div.status {
-    margin-top: 40px;
-    padding: 8px 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: bold;
-  }
-
-  div.count {
-    bottom: 0;
-    font-size: 11px;
-    padding: 1em 0;
-    width: 100%;
-    background: #fff;
-    text-align: center;
-    text-shadow: 0 1px 0 #fff;
-    color: #333;
-    -webkit-border-radius: 0 0 3px 3px;
-    -moz-border-radius: 0 0 3px 3px;
-    border-radius: 0 0 3px 3px;
   }
 
   &.flooded {
     border-color: #ed1000;
+    a:hover h3 {
+      background: #ed1000;
+    }
     h3 {
       background: #ff3021;
       color: #fff;
-      &.linked:hover {
-        background: #ed1000;
-      }
     }
     div.status { color: #ff3021; }
   }
 
   &.dry {
     border-color: #81c425;
+    a:hover h3 {
+      background: #81c425;
+    }
     h3 {
       background: #74af16;
       color: #fff;
-      &.linked:hover {
-        background: #81c425;
-      }
     }
     div.status { color: #74af16; }
   }
