@@ -31,6 +31,11 @@ class Zone < ActiveRecord::Base
     id
   end
 
+  has_many :flood_levels
+
+  def current_level
+    flood_levels.find_by_at DateTime.now.beginning_of_hour
+  end
 
   def update_statistics!
     counts = recent_reports.except(:order).group{flooded}.count

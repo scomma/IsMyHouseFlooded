@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class Report < ActiveRecord::Base
+  WINDOW = 12
+
   belongs_to :zone
   validates :zone_id, presence: true
 
@@ -23,7 +25,7 @@ class Report < ActiveRecord::Base
     end
   end
 
-  scope :recent, ->{ where{created_at > 12.hours.ago} }
+  scope :recent, ->{ where{created_at > WINDOW.hours.ago} }
 
   def classification
     if flooded == true

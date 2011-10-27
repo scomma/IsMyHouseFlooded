@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111023113137) do
+ActiveRecord::Schema.define(:version => 20111026105853) do
+
+  create_table "flood_levels", :force => true do |t|
+    t.integer  "zone_id",    :null => false
+    t.datetime "at",         :null => false
+    t.integer  "level",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flood_levels", ["zone_id", "at"], :name => "index_flood_levels_on_zone_id_and_at"
+  add_index "flood_levels", ["zone_id"], :name => "index_flood_levels_on_zone_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -36,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20111023113137) do
     t.string   "ip_address"
   end
 
+  add_index "reports", ["zone_id", "created_at"], :name => "index_reports_on_zone_id_and_created_at"
   add_index "reports", ["zone_id"], :name => "index_reports_on_zone_id"
 
   create_table "zones", :force => true do |t|
