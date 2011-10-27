@@ -1,5 +1,6 @@
 = content_tag_for :article, @zone, class: @zone.classification, data: @zone.metadata do
   %h3= @zone.id
+  .visualization
   %ul.feed
     - @zone.recent_reports.each do |report|
       - unless report.blank?
@@ -7,3 +8,15 @@
           %time= thai_time time_ago_in_words report.created_at
           %strong= report.human_flooded
           %span= report
+
+:javascript
+  function drawChart_#{@zone.id}() {
+    var data = new google.visualization.DataTable();
+    #{populate_data_table @zone.historical_levels}
+    new google.visualization.ImageLineChart($('#zone_#{@zone.id} .visualization').get(0)).
+        draw(data, {width: 700, height: 100, min: 0, max: 100, legend: 'none', valueLabelsInterval: 50});  
+  }
+  if (google.visualization)
+    drawChart_#{@zone.id}();
+  else
+    google.setOnLoadCallback(drawChart_#{@zone.id});

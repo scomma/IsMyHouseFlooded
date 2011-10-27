@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class Zone < ActiveRecord::Base
+  extend ActiveSupport::Memoizable
   validates :id, length:{ is: 5, message: "โปรดกรอกรหัสไปรษณีย์ที่ถูกต้อง" },
                  numericality:{ greater_than: 10000, message: "โปรดกรอกรหัสไปรษณีย์ที่ถูกต้อง" }
 
@@ -33,9 +34,15 @@ class Zone < ActiveRecord::Base
 
   has_many :flood_levels
 
+  def historical_levels
+    flood_levels.order{id}.limit(36)
+  end
+
   def current_level
     flood_levels.find_by_at DateTime.now.beginning_of_hour
   end
+
+  memoize :historical_levels, :current_level
 
   def update_statistics!
     counts = recent_reports.except(:order).group{flooded}.count

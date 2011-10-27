@@ -4,6 +4,7 @@
     %title Is My House Flooded | บ้านฉันจมหรือยัง
     = stylesheet_link_tag    'application'
     = javascript_include_tag 'application'
+    = javascript_include_tag "http://www.google.com/jsapi"
     = csrf_meta_tags
 
   %body
@@ -19,5 +20,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+      
+      google.load('visualization', '1.0', {'packages':['imagelinechart']});
 
     / Made with love. Please direct questions and feedbacks to @scomma. 
