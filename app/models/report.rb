@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Report < ActiveRecord::Base
-  WINDOW = 12
+  WINDOW = 18
 
   belongs_to :zone
   validates :zone_id, presence: true

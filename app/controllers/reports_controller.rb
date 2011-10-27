@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.create params[:report].merge(ip_address: request.env['REMOTE_ADDR'])
+    @report = Report.create params[:report].merge(ip_address: request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
     redirect_to root_path anchor: params[:report][:zone_id]
   end
 end

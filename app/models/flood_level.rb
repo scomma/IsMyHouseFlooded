@@ -5,6 +5,10 @@ class FloodLevel < ActiveRecord::Base
 
   validates :at, presence: true
 
+  def at_ict
+    @at_ict ||= at.in_time_zone(7)
+  end
+
   def relevant_reports
     from = at - Report::WINDOW.hours
     to   = at
@@ -15,7 +19,7 @@ class FloodLevel < ActiveRecord::Base
     counts      = relevant_reports.group{flooded}.count
     true_count  = counts[true].to_i
     total_count = true_count + counts[false].to_i
-    self.level  = (100.0 * true_count / total_count).round if total_count > 2
+    self.level  = (100.0 * true_count / total_count).round if total_count > 4
   end
 
   after_validation :update_level, on: :create

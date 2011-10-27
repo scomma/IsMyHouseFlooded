@@ -7,8 +7,12 @@ class Zone < ActiveRecord::Base
   has_many :reports, order: 'created_at DESC'
 
   def recent_reports
-    reports.recent
+    recent = reports.recent
+    recent = reports.limit(30) if recent.size < 30
+    recent
   end
+
+  memoize :recent_reports
 
   def positive_percent
     reports_count > 0 ? 100.0 * positive_count / reports_count : 0
@@ -35,7 +39,7 @@ class Zone < ActiveRecord::Base
   has_many :flood_levels
 
   def historical_levels
-    flood_levels.order{id}.limit(36)
+    flood_levels.order{id.desc}.limit(36).all.reverse
   end
 
   def current_level

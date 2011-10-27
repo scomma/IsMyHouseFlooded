@@ -7,9 +7,9 @@ module ZonesHelper
     data.addRows(#{levels.size});
     """ +
     levels.zip(0...levels.size).collect do |level, index|
-      label = case level.at.hour
-                when 0         then level.at.strftime "[%d %b]"
-                when 6, 12, 18 then level.at.strftime "%H:%M"
+      label = case level.at_ict.hour
+                when 0         then level.at_ict.strftime "[%d %b]"
+                when 6, 12, 18 then level.at_ict.strftime "%H:%M"
               end
       last_level = level.level || last_level
       """
