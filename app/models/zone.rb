@@ -39,7 +39,7 @@ class Zone < ActiveRecord::Base
   has_many :flood_levels
 
   def historical_levels
-    flood_levels.order{id.desc}.limit(36).all.reverse
+    flood_levels.order{at.desc}.limit(72).all.reverse
   end
 
   def current_level
@@ -49,7 +49,7 @@ class Zone < ActiveRecord::Base
   memoize :historical_levels, :current_level
 
   def update_statistics!
-    counts = recent_reports.except(:order).group{flooded}.count
+    counts = reports.recent.except(:order).group{flooded}.count
     self.positive_count = counts[true]  || 0
     self.negative_count = counts[false] || 0
     self.reports_count  = positive_count + negative_count

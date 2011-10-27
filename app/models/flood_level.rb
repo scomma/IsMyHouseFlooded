@@ -33,6 +33,7 @@ class FloodLevel < ActiveRecord::Base
   def self.create_all_between from, to
     at = from.beginning_of_hour
     while at < to
+      Rails.logger.info "Calculating flood levels for #{at.in_time_zone 7}"
       create_all_at at
       at += 1.hour
     end
