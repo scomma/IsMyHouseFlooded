@@ -24,7 +24,7 @@ class Zone < ActiveRecord::Base
 
   def classification
     [positive_percent > 20 ? 'flooded' : 'dry',
-     reports_count > 9 ? 'significant' : 'insignificant'
+     reports_count > 3 ? 'significant' : 'insignificant'
     ].join ' '
   end
 

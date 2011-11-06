@@ -1,6 +1,7 @@
 desc "Truncate recent report data"
 task :truncate => :environment do
   Zone.all.map &:update_statistics!
+  FloodLevel.where{at < 7.days.ago}.destroy_all
 end
 
 task :generate_levels, [:hours] => :environment do |t, args|
