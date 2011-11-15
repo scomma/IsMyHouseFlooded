@@ -4,7 +4,7 @@ class Zone < ActiveRecord::Base
   validates :id, length:{ is: 5, message: "โปรดกรอกรหัสไปรษณีย์ที่ถูกต้อง" },
                  numericality:{ greater_than: 10000, message: "โปรดกรอกรหัสไปรษณีย์ที่ถูกต้อง" }
 
-  has_many :reports, order: 'created_at DESC'
+  has_many :reports, order: 'created_at DESC', conditions: "age(created_at) < interval '7 days'"
 
   def recent_reports
     recent = reports.recent
