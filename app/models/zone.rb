@@ -39,7 +39,11 @@ class Zone < ActiveRecord::Base
   has_many :flood_levels
 
   def historical_levels
-    flood_levels.order{at.desc}.limit(72).all.reverse
+    # flood_levels.order{at.desc}.limit(72).all.reverse
+    # why you order it by DESC and reverse it? (then its ASC)
+    # also you dont need to call, because AR is sending the query
+    # and created_at asc should be by default in this case    
+    flood_levels.order{at.asc}.limit(72)    
   end
 
   def current_level
